@@ -1,12 +1,16 @@
 import React from 'react';
 import { Global, css } from '@emotion/react';
+import Helmet from 'react-helmet';
 import Header from './header';
+import useSiteMetadata from '../hooks/use-sitemetadata';
 
+const Layout = ({ children }) => {
+    const { title, description } = useSiteMetadata();
 
-const Layout = ({ children }) => (
-    <>
-        <Global
-            styles={css`
+    return (
+        <>
+            <Global
+                styles={css`
         * {
           box-sizing: border-box;
           margin: 0;
@@ -53,18 +57,24 @@ const Layout = ({ children }) => (
             margin-top: 0.25rem;
         }
       `}
-        />
-        <Header />
-        <main
-            css={css`
+            />
+            <Helmet>
+                <html lang="en" />
+                <title>{title}</title>
+                <meta name="description" content={description} />
+            </Helmet>
+            <Header />
+            <main
+                css={css`
                 margin: 2rem auto 4rem;
                 max-width: 90vw;
                 width: 550px;
             `}
-        >
-            {children}
-        </main>
-    </>
-);
+            >
+                {children}
+            </main>
+        </>
+    );
+};
 
 export default Layout;

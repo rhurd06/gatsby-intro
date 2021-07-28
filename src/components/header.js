@@ -31,10 +31,23 @@ const Header = () => (
             padding: 0.5rem calc((100vw - 550px - 0.5rem) / 2);
         `}
     >
-        <NavLink to="/" fontWeight="bold">FEM Workshop</NavLink>
-        <nav css={css`margin-top: 0; `}>
-            <NavLink to="/" activeClassName="current-page">Home</NavLink>
-            <NavLink to="/about/" activeClassName="current-page">About</NavLink>
+        <NavLink to="/" fontWeight="bold">
+            FEM Workshop
+        </NavLink>
+        <nav 
+            css={css`
+                margin-top: 0; 
+            `}
+        >
+            <NavLink to="/" activeClassName="current-page">
+                Home
+            </NavLink>
+            <NavLink to="/about/" activeClassName="current-page">
+                About
+            </NavLink>
+            <NavLink to="/contact/" activeClassName="current-page">
+                Contact
+            </NavLink>
         </nav>
     </header>
 );

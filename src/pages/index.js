@@ -3,7 +3,6 @@ import Layout from '../components/layout';
 import Hero from '../components/hero';
 import PostPreview from '../components/post-preview';
 import usePosts from '../hooks/use-posts';
-import ReadLink from '../components/read-link';
 
 export default () => {
     const posts = usePosts();
